@@ -151,7 +151,7 @@ function startProcessing(sensors) {
         var sensor_3_value = document.getElementById("temperature3").value;
         // Update value in memory
         sensors["sensor3"].setDegreesC(sensor_3_value);
-        console.log(sensors["sensor3"].getDegreesC());
+        //console.log(sensors["sensor3"].getDegreesC());
         updateDataStorage(JSON.parse(sensors["sensor3"].getDegreesC()), sensors["sensor3"].getKey())
             .then(function(result) {
                 //console.log(result);
@@ -164,7 +164,7 @@ function startProcessing(sensors) {
         var sensor_4_value = document.getElementById("temperature4").value;
         // Update value in memory
         sensors["sensor4"].setDegreesC(sensor_4_value);
-        console.log(sensors["sensor4"].getDegreesC());
+        //console.log(sensors["sensor4"].getDegreesC());
         updateDataStorage(JSON.parse(sensors["sensor4"].getDegreesC()), sensors["sensor4"].getKey())
             .then(function(result) {
                 //console.log(result);
