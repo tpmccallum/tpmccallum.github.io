@@ -201,7 +201,7 @@ setTimeout(function() {
                           //console.log("3******************" + result_object);
                           //var c = JSON.parse(result_object.return_value);
                           var o = JSON.parse(result_object.return_value);
-                          console.log("c******************" + Number(JSON.stringify(o.return_value.result)));
+                          //console.log("c******************" + Number(JSON.stringify(o.return_value.result)));
                             data.setValue(0, 1, Number(JSON.stringify(o.return_value.result)));
                             chart.draw(data, options);
                         })
