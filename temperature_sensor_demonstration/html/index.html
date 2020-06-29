@@ -183,7 +183,7 @@ setTimeout(function() {
                     var data_45 = JSON.stringify({
                         "callback": {
                             "hostname": "rpc.ssvm.secondstate.io",
-                            "path": "/api/run/46/convert_celsius_to_fahrenheit",
+                            "path": "/api/run/2/convert_celsius_to_fahrenheit",
                             "method": "POST",
                             "port": 8081,
                             "headers": {
@@ -197,11 +197,7 @@ setTimeout(function() {
 
                         .then(function(result) {
                           var result_object = JSON.parse(result);
-                          //var result_object = JSON.parse(JSON.stringify(result));
-                          //console.log("3******************" + result_object);
-                          //var c = JSON.parse(result_object.return_value);
                           var o = JSON.parse(result_object.return_value);
-                          //console.log("c******************" + Number(JSON.stringify(o.return_value.result)));
                             data.setValue(0, 1, Number(JSON.stringify(o.return_value.result)));
                             chart.draw(data, options);
                         })
