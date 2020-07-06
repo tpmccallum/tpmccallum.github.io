@@ -60,7 +60,8 @@ function calculateAverageTemp(data) {
             "method": "POST",
             "timeout": 0,
             "headers": {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                "SSVM_Usage_Key": "415a1730-d871-410c-b5f8-ff960db3c28b"
             },
             "data": data,
         };
