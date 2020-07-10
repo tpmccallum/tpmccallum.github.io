@@ -20,7 +20,7 @@ class Sensor {
 function initializeDataStorage(_data) {
     return new Promise(function(resolve, reject) {
         var settings = {
-            "url": "https://rpc.ssvm.secondstate.io:8081/api/ephemeral_storage",
+            "url": "https://dev.rpc.ssvm.secondstate.io:8081/api/ephemeral_storage",
             "method": "POST",
             "timeout": 0,
             "headers": {
@@ -38,7 +38,7 @@ function initializeDataStorage(_data) {
 function updateDataStorage(data, key) {
     return new Promise(function(resolve, reject) {
         var settings = {
-            "url": "https://rpc.ssvm.secondstate.io:8081/api/ephemeral_storage/" + key,
+            "url": "https://dev.rpc.ssvm.secondstate.io:8081/api/ephemeral_storage/" + key,
             "method": "PUT",
             "timeout": 0,
             "headers": {
@@ -56,7 +56,7 @@ function updateDataStorage(data, key) {
 function calculateAverageTemp(data) {
     return new Promise(function(resolve, reject) {
         var settings = {
-            "url": "https://rpc.ssvm.secondstate.io:8081/api/run/1/calculate_average_temperature",
+            "url": "https://dev.rpc.ssvm.secondstate.io:8081/api/run/1/calculate_average_temperature",
             "method": "POST",
             "timeout": 0,
             "headers": {
