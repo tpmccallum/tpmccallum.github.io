@@ -56,11 +56,12 @@ function updateDataStorage(data, key) {
 function calculateAverageTemp(data) {
     return new Promise(function(resolve, reject) {
         var settings = {
-            "url": "https://rpc.ssvm.secondstate.io:8081/api/run/1/calculate_average_temperature",
+            "url": "https://rpc.ssvm.secondstate.io:8081/api/run/5/calculate_average_temperature",
             "method": "POST",
             "timeout": 0,
             "headers": {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                "SSVM_Usage_Key": "12b45943-a6b8-4f85-a624-6a4eee2b5b23"
             },
             "data": data,
         };
