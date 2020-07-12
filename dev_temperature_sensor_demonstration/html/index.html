@@ -152,7 +152,7 @@
 
                 var options = {
                     animation: {
-                        duration: 500,
+                        duration: 1000,
                         easing: 'inAndOut'
                     },
                     min: 32,
@@ -180,25 +180,31 @@ setTimeout(function() {
                     Object.keys(sensors).forEach(key => {
                         list_of_temps.push(Number(sensors[key].degreesC));
                     });
-                   var data_45 = JSON.stringify({
+                    var data_45 = JSON.stringify({
                         "SSVM_Callback": {
                             "hostname": "rpc.ssvm.secondstate.io",
                             "path": "/api/run/6/convert_celsius_to_fahrenheit",
                             "method": "POST",
                             "port": 8081,
                             "headers": {
-                                "Content-Type": "text/plain"
+                                "Content-Type": "text/plain",
+                                "SSVM_Usage_Key": "10e5ea4b-0bfd-4379-ab7c-1a374ec8e1d9"
                             }
                         },
                         "individual_temperatures": list_of_temps
                     });
                     
-                    calculateAverageTemp(data_45).then(function(result) {
+                    calculateAverageTemp(data_45)
+
+                        .then(function(result) {
+
                           var result_object = JSON.parse(result);
+                          //console.log("***********" + JSON.stringify(result_object));
                           //var result_object = JSON.parse(JSON.stringify(result));
                           //var c = JSON.parse(result_object.return_value);
-                          var o = JSON.parse(result_object.return_value);
-                            data.setValue(0, 1, Number(JSON.stringify(o.return_value.result)));
+                          //var o = JSON.parse(result_object.return_value);
+                          data.setValue(0, 1, Number(result_object["result"]));
+                            //data.setValue(0, 1, Number(JSON.stringify(o.return_value.result)));
                             chart.draw(data, options);
                         })
                         .catch(function() {
