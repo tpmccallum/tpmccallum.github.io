@@ -193,9 +193,7 @@ setTimeout(function() {
                         "individual_temperatures": list_of_temps
                     });
                     
-                    calculateAverageTemp(data_45)
-
-                        .then(function(result) {
+                    calculateAverageTemp(data_45).then(function(result) {
                           var result_object = JSON.parse(result);
                           //var result_object = JSON.parse(JSON.stringify(result));
                           //var c = JSON.parse(result_object.return_value);
